@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Evil Artist</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="all" href="style.css" />
+        <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+        <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    </head>
+    <body>
+        <header id="header">
+            <h1 id="title">Evil Artist</h1>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/Contact.html">Contact</a>    
+                <a href="https://www.redbubble.com/people/evilartist/shop" target="_blank">Shop</a>
+            </nav>
+        </header>
+        <main id="main">
+            <div class="fade_top"></div>
+            <div class="grid">
+                <img data-src="images\3ae7ba_1a6c183556ab4a7c932514e66a349ea0_mv2.webp" class="lazy grid-item" />
+                <img data-src="images\3ae7ba_6c1accb4300545c299dbd74105475dbf_mv2.webp" class="lazy grid-item" />
+                <video src="images\UGCForestTwitter.mp4" autoplay loop class="grid-item grid-item--half"></video>
+                <img data-src="images\3ae7ba_7a2d23e6688148439cfe6b8038e65cb1_mv2.webp" class="lazy grid-item" />
+                <img data-src="images\3ae7ba_abd14e0cbad74d7086a95d9a7e599bb0_mv2.webp" class="lazy grid-item" />
+                <img data-src="images\3ae7ba_7409bbf5462e4e93a2231f798675f1c6_mv2.webp" class="lazy grid-item" />
+                <img data-src="images\3ae7ba_43c880c3df384e70bd48db80420ec754_mv2.webp" class="lazy grid-item" />
+                <img data-src="images\3ae7ba_c52d28ad6e9d4b56be18ae5fa8a9c5c2_mv2.webp" class="lazy grid-item" />
+                <img data-src="images\3ae7ba_64a5057ee609470f95f3bc3f6aade81e_mv2.webp" class="lazy grid-item" />
+                <img data-src="images\3ae7ba_830a4d069e91495d9872752101651dd6_mv2.webp" class="lazy grid-item" />
+                <img data-src="images\3ae7ba_eda1db0bc18e41c28cf108aa453dc5b3_mv2.webp" class="lazy grid-item" />
+                <img data-src="images\3ae7ba_1858a6f6540644d797565fe43771a6e7_mv2.webp" class="lazy grid-item" />
+                <img data-src="images\3ae7ba_ce2802b4c75d4885a73af249a081771a_mv2.webp" class="lazy grid-item" />
+                <img data-src="images\3ae7ba_c97c84766a584af99f08f188863d57fa_mv2.webp" class="lazy grid-item" />
+                <video src="images\UGCSTRAWTAIL.mp4" autoplay  loop class="grid-item grid-item--half"></video>
+                <img data-src="images\3ae7ba_be55d46923694d8fa99ce03dcb7e03af_mv2.webp" class="lazy grid-item" />
+                <img data-src="images\3ae7ba_d2dafc6134fe40fdaecbb3d0bb700caa_mv2.webp" class="lazy grid-item" />
+            </div>   
+            <div class="fade_bottom"></div>
+        </main>
+        <footer>
+        </footer>
+        <script>
+            //   for an individual element
+            var msnry = new Masonry( '.grid', {
+                itemSelector: '.grid-item'
+            });
+            var lazyLoadInstance = new LazyLoad({
+            // Your custom settings go here
+            });
+            lazyLoadInstance.update();
+            imagesLoaded( '.grid' ).on( 'progress', function() {
+            // layout Masonry after each image loads
+            msnry.layout();
+            });
+            window.onscroll = function() {scrollFunction()};
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                    document.getElementById("header").style.height = "64px";
+                    document.getElementById("main").style.paddingtop = "64px";
+                    document.getElementById("title").style.display = "none";
+                } else {
+                    document.getElementById("header").style.height = "112px";
+                    document.getElementById("main").style.paddingtop = "112px";
+                    document.getElementById("title").style.display = "block";
+                }
+            }
+        </script>
+    </body>
+</html>
